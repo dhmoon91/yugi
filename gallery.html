@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>안성맞춤유기</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .row > .column {
+    padding: 0 8px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .column {
+    float: left;
+    width: 25%;
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  /* The Close Button */
+  .close {
+    padding-top:50px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .mySlides {
+    display: none;
+  }
+
+  .cursor {
+    cursor: pointer
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+
+  .caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+  }
+
+  .demo {
+    opacity: 0.6;
+  }
+
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+  img.hover-shadow {
+    transition: 0.3s
+  }
+
+  .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar-wrapper">
+    <div class="container-fluid">
+      <div class="navbar navbar-fixed-top">
+
+        <div class="navbar-header">
+  	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  	      <span class="icon-bar"></span>
+  	      <span class="icon-bar"></span>
+  	      <span class="icon-bar"></span>
+  	    </a>
+
+          <a class="navbar-brand" href="#"><img style="max-width:100px; margin-top: -7px;" src="img/안성맞춤유기.jpg" ></a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#about#">About</a></li>
+              <li class="active"><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class = "nav navbar-nav navbar-right">
+              <li><a href="http://m.blog.naver.com/livingworld-ansung?suggestAddBuddy=true" target="_blank"><i class="fa fa-rss fa-lg" style="font-size:17px" aria-hidden="true"></i> Blog</a></li>
+              <li><a href="https://www.instagram.com/ansungmachum_yugi/" target="_blank"><i class="fa fa-instagram fa-lg" style="font-size:17px" aria-hidden="true"></i> Instagram</a></li>
+            </ul>
+          </div>
+
+      </div>
+    </div><!-- /container -->
+  </div><!-- /navbar wrapper -->
+
+
+
+
+  <div class="row" style="padding-top:100px;">
+    <div class="column">
+      <img src="https://c1.staticflickr.com/1/565/31135994114_be553c588e_o.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="https://c1.staticflickr.com/1/282/31975904875_934efd4793_c.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="https://c1.staticflickr.com/1/523/31938789196_cf082fa33b_o.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+      <img src="https://c1.staticflickr.com/1/436/31602355910_818ab32896_o.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+    </div>
+  </div>
+
+  <div id="myModal" class="modal" >
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content" >
+
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="https://c1.staticflickr.com/1/565/31135994114_be553c588e_o.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="https://c1.staticflickr.com/1/282/31975904875_934efd4793_c.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="https://c1.staticflickr.com/1/523/31938789196_cf082fa33b_o.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="https://c1.staticflickr.com/1/436/31602355910_818ab32896_o.jpg" style="width:100%">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+
+      <div class="column">
+        <img class="demo cursor" src="https://c1.staticflickr.com/1/565/31135994114_be553c588e_o.jpg" style="width:100%" onclick="currentSlide(1)" alt="유기1">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="https://c1.staticflickr.com/1/282/31975904875_934efd4793_c.jpg" style="width:100%" onclick="currentSlide(2)" alt="유기2">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="https://c1.staticflickr.com/1/523/31938789196_cf082fa33b_o.jpg" style="width:100%" onclick="currentSlide(3)" alt="유기3">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="https://c1.staticflickr.com/1/436/31602355910_818ab32896_o.jpg" style="width:100%" onclick="currentSlide(4)" alt="유기4">
+      </div>
+    </div>
+  </div>
+
+  </body>
+
+
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+/*
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}*/
+
+
+
+
+/*
+  $(document).ready(function(){
+
+      loadGallery(true, 'a.thumbnail');
+
+      //This function disables buttons when needed
+      function disableButtons(counter_max, counter_current){
+          $('#show-previous-image, #show-next-image').show();
+          if(counter_max == counter_current){
+              $('#show-next-image').hide();
+          } else if (counter_current == 1){
+              $('#show-previous-image').hide();
+          }
+      }
+
+      /**
+       *
+       * @param setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
+       * @param setClickAttr  Sets the attribute for the click handler.
+       */
+/*
+      function loadGallery(setIDs, setClickAttr){
+          var current_image,
+              selector,
+              counter = 0;
+
+          $('#show-next-image, #show-previous-image').click(function(){
+              if($(this).attr('id') == 'show-previous-image'){
+                  current_image--;
+              } else {
+                  current_image++;
+              }
+
+              selector = $('[data-image-id="' + current_image + '"]');
+              updateGallery(selector);
+          });
+
+          function updateGallery(selector) {
+              var $sel = selector;
+              current_image = $sel.data('image-id');
+              $('#image-gallery-caption').text($sel.data('caption'));
+              $('#image-gallery-title').text($sel.data('title'));
+              $('#image-gallery-image').attr('src', $sel.data('image'));
+              disableButtons(counter, $sel.data('image-id'));
+          }
+
+          if(setIDs == true){
+              $('[data-image-id]').each(function(){
+                  counter++;
+                  $(this).attr('data-image-id',counter);
+              });
+          }
+          $(setClickAttr).on('click',function(){
+              updateGallery($(this));
+          });
+      }
+  });*/
+
+  </script>
+  </html>

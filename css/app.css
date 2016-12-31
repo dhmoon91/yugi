@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+
+body{
+  background:  linear-gradient(
+      rgba(0, 0, 0, 0.45),
+     rgba(255, 255, 255, 0.65)
+
+
+   ),url('../img/background1.JPG');
+
+  background-size: cover;
+  background-position:center;
+  background-color: black;
+
+}
+
+html {
+  height:100%;
+}
+
+#content{
+  text-align: center;
+
+}
+
+h1,h3 {
+
+  color: white;
+  font-family: 'Nanum Brush Script',cursive;
+  font-size: 400%
+}
+a{
+  color: white;
+  font-family: 'Nanum Brush Script',cursive;
+  font-size: 250%
+}
+
+.test-center
+{
+  position:absolute;
+  top: 50%;
+  left:50%;
+    width: 40%;
+    padding: 20px;
+    transform: translate(-50%,-50%);
+
+}
+
+.jumbotron {
+  position: absolute;
+  top: 50%;
+  left:50%;
+    width: 40%;
+      padding: 20px;
+  transform: translate(-50%,-50%);
+  border: 1px dashed deeppink;
+}
